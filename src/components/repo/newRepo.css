@@ -1,0 +1,188 @@
+.create-repo-page {
+    min-height: calc(100vh - 64px);
+
+    display: flex;
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    background-color: #0d1117;
+    color: #f0f6fc;
+
+    box-sizing: border-box;
+}
+
+
+.create-repo-card {
+    width: 100%;
+    max-width: 760px;
+
+    padding: 32px;
+
+    background-color: #161b22;
+
+    border: 1px solid #30363d;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+}
+
+
+/* Header */
+
+.repo-header {
+    padding-bottom: 25px;
+    margin-bottom: 28px;
+
+    border-bottom: 1px solid #30363d;
+}
+
+.repo-header h1 {
+    margin: 0 0 8px;
+
+    font-size: 28px;
+    font-weight: 600;
+
+    color: #f0f6fc;
+}
+
+.repo-header p {
+    margin: 0;
+
+    color: #8b949e;
+
+    font-size: 14px;
+}
+
+
+/* Form */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group > label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #f0f6fc;
+}
+
+.form-group > label span {
+    color: #8b949e;
+    font-weight: 400;
+}
+
+
+/* Inputs */
+
+.form-group input[type="text"] {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    box-sizing: border-box;
+
+    background-color: #0d1117;
+    color: #f0f6fc;
+
+    border: 1px solid #30363d;
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: border-color 0.2s ease;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #58a6ff;
+
+    box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.15);
+}
+
+.form-group input::placeholder {
+    color: #6e7681;
+}
+
+
+/* Helper text */
+
+.form-group small {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #8b949e;
+
+    font-size: 12px;
+}
+
+
+/* Visibility */
+
+.visibility-options {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.visibility-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 14px;
+
+    border: 1px solid #30363d;
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.visibility-option:hover {
+    background-color: #21262d;
+    border-color: #8b949e;
+}
+
+.visibility-option input {
+    margin-top: 4px;
+
+    accent-color: #58a6ff;
+}
+
+.visibility-option strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 14px;
+}
+
+.visibility-option p {
+    margin: 0;
+
+    color: #8b949e;
+
+    font-size: 12px;
+}
+
+
+/* Footer */
+
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #30363d;
+}

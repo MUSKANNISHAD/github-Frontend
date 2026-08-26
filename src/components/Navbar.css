@@ -1,0 +1,115 @@
+.navbar {
+    width: 100%;
+    height: 64px;
+    padding: 0 7%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #0d1117;
+    border-bottom: 1px solid #30363d;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+/* GitHub logo + name */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    color: #f0f6fc;
+}
+
+#github-Logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.brand h3 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+
+/* Right side navigation */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* New Repository */
+
+.new-repo {
+    padding: 8px 14px;
+
+    color: #f0f6fc;
+    text-decoration: none;
+
+    border: 1px solid #30363d;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+.new-repo:hover {
+    background-color: #21262d;
+    border-color: #8b949e;
+}
+
+.All-Repository {
+    padding: 8px 14px;
+
+    color: #f0f6fc;
+    text-decoration: none;
+
+    border: 1px solid #30363d;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+
+}
+
+.All-Repository:hover {
+    background-color: #21262d;
+    border-color: #8b949e;
+}
+
+/* Profile */
+
+.profile-link {
+    padding: 8px 12px;
+
+    color: #f0f6fc;
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+.profile-link:hover {
+    background-color: #21262d;
+    color: #58a6ff;
+}
