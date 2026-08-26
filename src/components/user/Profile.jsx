@@ -24,7 +24,7 @@ export default function Profile() {
 
       if (userId) {
         try {
-          const response = await axios.get(`http://localhost:5000/getUserProfile/${userId}`);
+          const response = await axios.get(`https://p1awbsgo2d.execute-api.ap-south-1.amazonaws.com/getUserProfile/${userId}`);
 
           console.log("response is ", response);
           console.log("response.data is ", response.data);

@@ -21,7 +21,7 @@ export default function SignUp() {
         e.preventDefault();
         try {
             setLoading(true);
-            const res = await axios.post("http://localhost:5000/signUp", {
+            const res = await axios.post("https://p1awbsgo2d.execute-api.ap-south-1.amazonaws.com/signUp", {
                 email: email,
                 password: password,
                 username: username

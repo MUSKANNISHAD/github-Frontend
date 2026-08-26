@@ -20,7 +20,7 @@ export default function NewRepo() {
         const userId = localStorage.getItem("userId");
 
         const res = await axios.post(
-            "http://localhost:5000/repo/CreateRepo",
+            "https://p1awbsgo2d.execute-api.ap-south-1.amazonaws.com/repo/CreateRepo",
             {
                 name: name,
                 description: description,

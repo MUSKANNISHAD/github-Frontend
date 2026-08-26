@@ -21,7 +21,7 @@ export default function AllRepo() {
 
     const fetchRepositories = async () => {
       try {
-        const repositories = await fetch(`http://13.232.104.34:5000/repo/FetchRepositoryById/${userId}`);
+        const repositories = await fetch(`https://p1awbsgo2d.execute-api.ap-south-1.amazonaws.com/repo/FetchRepositoryById/${userId}`);
         const data = await repositories.json();
 
         // console.log(data.Repository);
