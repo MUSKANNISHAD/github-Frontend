@@ -4,6 +4,7 @@ import { Link, PageHeader } from "@primer/react";
 import { Button } from "@primer/react";
 import styles from "./style.module.css";
 import { useAuth } from "../../authContext.jsx";
+import clientServer from '../../clientServer.js';
 
 
 export default function Login() {
@@ -11,14 +12,14 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const { setCurrentUser} = useAuth();
+  const { setCurrentUser } = useAuth();
 
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await axios.post("https://p1awbsgo2d.execute-api.ap-south-1.amazonaws.com/login", {
+      const res = await clientServer.post("/login", {
         email: email,
         password: password
       })

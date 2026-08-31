@@ -8,6 +8,7 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import Footer from '../footer';
 import { useAuth } from '../../authContext.jsx';
+import clientServer from '../../clientServer.js';
 
 
 export default function Profile() {
@@ -16,7 +17,7 @@ export default function Profile() {
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState({ username: "username" });
 
-  const {setCurrentUser}=useAuth();
+  const { setCurrentUser } = useAuth();
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -24,7 +25,7 @@ export default function Profile() {
 
       if (userId) {
         try {
-          const response = await axios.get(`https://p1awbsgo2d.execute-api.ap-south-1.amazonaws.com/getUserProfile/${userId}`);
+          const response = await clientServer.get(`/getUserProfile/${userId}`);
 
           console.log("response is ", response);
           console.log("response.data is ", response.data);

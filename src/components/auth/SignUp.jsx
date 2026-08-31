@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
+import clientServer from "../../clientServer.js";
 
 import { PageHeader } from "@primer/react";
 import { Link } from "react-router-dom";
@@ -21,7 +22,7 @@ export default function SignUp() {
         e.preventDefault();
         try {
             setLoading(true);
-            const res = await axios.post("https://p1awbsgo2d.execute-api.ap-south-1.amazonaws.com/signUp", {
+            const res = await clientServer.post("/signUp", {
                 email: email,
                 password: password,
                 username: username

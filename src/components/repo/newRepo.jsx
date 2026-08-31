@@ -4,6 +4,7 @@ import { Button } from '@primer/react';
 import axios from 'axios';
 import Navbar from '../Navbar';
 import Footer from '../footer';
+import clientServer from '../../clientServer.js';
 
 
 export default function NewRepo() {
@@ -19,8 +20,8 @@ export default function NewRepo() {
 
         const userId = localStorage.getItem("userId");
 
-        const res = await axios.post(
-            "https://p1awbsgo2d.execute-api.ap-south-1.amazonaws.com/repo/CreateRepo",
+        const res = await clientServer.post(
+            "/repo/CreateRepo",
             {
                 name: name,
                 description: description,
