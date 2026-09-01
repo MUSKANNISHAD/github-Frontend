@@ -7,7 +7,6 @@ import { Button } from '@primer/react';
 import { useNavigate } from 'react-router-dom';
 import clientServer from '../../clientServer.js';
 
-
 export default function AllRepo() {
 
   const [repositories, setRepositories] = useState([]);
@@ -15,7 +14,7 @@ export default function AllRepo() {
   // const [suggestedRepositories, setSuggestedRepositories] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const userId = localStorage.getItem('userId');
@@ -23,10 +22,8 @@ export default function AllRepo() {
     const fetchRepositories = async () => {
       try {
         const repositories = await clientServer.get(`/repo/FetchRepositoryById/${userId}`);
-        const data = await repositories.json();
 
-        // console.log(data.Repository);
-        setRepositories(data.Repository);
+        setRepositories(repositories.data.Repository);
       } catch (err) {
         console.log("error while fetching repo is  :", err);
       }
@@ -66,7 +63,6 @@ export default function AllRepo() {
       <main className="dashboard-main">
 
         <div className="section-header">
-
           <div>
             <h3>Your Repositories</h3>
             <p className="section-subtitle">
@@ -77,11 +73,8 @@ export default function AllRepo() {
           <span className="repo-count">
             {repositories.length}
           </span>
-
         </div>
 
-
-        {/* Search */}
         <div className="search-container">
 
           <span className="search-icon">
@@ -96,15 +89,10 @@ export default function AllRepo() {
           />
 
         </div>
-
-
-        {/* Repository cards */}
         <div className="repository-list">
-
           {searchResults.map((repo) => {
-
             return (
-              <div 
+              <div
                 className="repo-card own-repo-card" key={repo._id}>
 
                 <div className="repo-card-header">
@@ -122,7 +110,6 @@ export default function AllRepo() {
                   </div>
 
                 </div>
-
                 <p>
                   {repo.description || "No description available"}
                   {/* <Button onClick={handledeleteRepo}>delete</Button> */}
@@ -143,11 +130,9 @@ export default function AllRepo() {
 
               </div>
             );
-
           })}
 
         </div>
-
       </main>
       <Footer />
     </>

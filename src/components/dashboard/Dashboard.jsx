@@ -6,8 +6,6 @@ import clientServer from '../../clientServer.js';
 
 
 export default function Dashboard() {
-
-
   const [repositories, setRepositories] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestedRepositories, setSuggestedRepositories] = useState([]);
@@ -19,11 +17,10 @@ export default function Dashboard() {
 
     const fetchRepositories = async () => {
       try {
-        const repositories = await clientServer.get(`/${userId}`);
-        const data = await repositories.json();
+        const repositories = await clientServer.get(`repo/FetchRepositoryById/${userId}`);
 
-        // console.log(data.Repository);
-        setRepositories(data.Repository);
+        console.log("repo by id:", repositories.data.Repository);
+        setRepositories(repositories.data.Repository);
       } catch (err) {
         console.log("error while fetching repo is  :", err);
       }
@@ -31,10 +28,10 @@ export default function Dashboard() {
     const fetchingSuggestedRepositories = async () => {
       try {
         const repositories = await clientServer.get(`/repo/getAllRepository`);
-        const data = await repositories.json();
+        // const data = await repositories.json();
 
-        // console.log(data.allRepo);
-        setSuggestedRepositories(data.allRepo);
+        console.log("all repo is :", repositories.data.allRepo);
+        setSuggestedRepositories(repositories.data.allRepo);
       } catch (err) {
         console.log("error is :", err);
       }
@@ -59,10 +56,7 @@ export default function Dashboard() {
   return (
     <>
       <Navbar />
-
       <section id="dashboard">
-
-        {/* LEFT - Suggested Repositories */}
         <aside className="dashboard-sidebar">
 
           <div className="section-header">
@@ -108,11 +102,8 @@ export default function Dashboard() {
         </aside>
 
 
-        {/* CENTER - Your Repositories */}
         <main className="dashboard-main">
-
           <div className="section-header">
-
             <div>
               <h3>Your Repositories</h3>
               <p className="section-subtitle">
@@ -127,7 +118,6 @@ export default function Dashboard() {
           </div>
 
 
-          {/* Search */}
           <div className="search-container">
 
             <span className="search-icon">
@@ -144,7 +134,6 @@ export default function Dashboard() {
           </div>
 
 
-          {/* Repository cards */}
           <div className="repository-list">
 
             {searchResults.map((repo) => {
@@ -195,8 +184,7 @@ export default function Dashboard() {
         </main>
 
 
-        {/* RIGHT - Upcoming Events */}
-        <aside className="events-sidebar">
+        { <aside className="events-sidebar">
 
           <div className="section-header">
             <h3>Upcoming Events</h3>
@@ -250,7 +238,7 @@ export default function Dashboard() {
 
           </div>
 
-        </aside>
+        </aside> }
 
       </section>
       <Footer />

@@ -25,11 +25,11 @@ export default function Profile() {
 
       if (userId) {
         try {
-          const response = await clientServer.get(`/getUserProfile/${userId}`);
+          const response = await clientServer.get(`/getUserProfileById/${userId}`);
 
-          console.log("response is ", response);
-          console.log("response.data is ", response.data);
-          setUserDetails(response.data)
+          console.log("response is ", response.data.user);
+          // console.log("response.data is ", response.data);
+          setUserDetails(response.data.user)
 
         } catch (err) {
           console.log(`error while fetching profile ${err}`);
