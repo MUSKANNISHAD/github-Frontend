@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { Button, TextInput, Heading } from "@primer/react";
 import styles from "./style.module.css";
 import { useAuth } from "../../authContext.jsx";
+import githubLogo from "../../assets/github-mark-white.svg";
+
 
 export default function SignUp() {
 
@@ -44,7 +46,13 @@ export default function SignUp() {
     return (
         <div className={styles.loginWrapper}>
             <div className={styles.logoConatiner}>
-                <img className={styles.loginLogo} src='../../assets/github-mark-white.svg' alt='logo' />
+                {/* <img className={styles.loginLogo} src='../../assets/github-mark-white.svg' alt='logo' /> */}
+                <img
+                    className={styles.loginLogo}
+                    src={githubLogo}
+                    alt="Logo"
+                    style={{ width: "50px", height: "50px" }}
+                />
             </div>
 
             <div className={styles.loginBoxWrapper}>
